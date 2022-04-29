@@ -8,7 +8,8 @@ public class PrintFormatacaoNumeros {
         float taxa = 0.2456f;
         float valor = 7654.321f;
 
-        var valorConvert = NumberFormat.getCurrencyInstance().format(valor);
+        NumberFormat nf = NumberFormat.getCurrencyInstance(new Locale("pt","BR"));
+        var valorConvert = nf.format(valor);
         var taxaConvert = new DecimalFormat("#,##0.00").format(taxa);
 
         System.out.println("Valor: " + valorConvert + "\n" + "Taxa: " + taxaConvert + "%");
