@@ -10,5 +10,7 @@ public class PrintFormatacaoNumeros {
 
         System.out.printf("Valor: " + NumberFormat.getCurrencyInstance(new Locale("pt","BR"))
                 .format(valor) + "\n" + "Taxa: %.2f%%\n", taxa);
+
+	System.err.println("");
     }
 }
