@@ -3,7 +3,7 @@ package trace;
 import java.util.ArrayList;
 import java.util.stream.Collectors;
 
-public class Numeros0a99 {
+public class NumerosPares {
     public static void main(String[] args) {
         var str = new ArrayList<>();
 
