@@ -1,3 +1,8 @@
+package trace;
+import java.text.DecimalFormat;
+import java.text.NumberFormat;
+import java.util.Locale;
+
 public class PrintFormatacaoNumeros {
     public static void main(String[] args) {
         float taxa = 0.2456f;
