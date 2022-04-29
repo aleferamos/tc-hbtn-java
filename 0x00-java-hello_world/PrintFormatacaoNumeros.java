@@ -12,6 +12,6 @@ public class PrintFormatacaoNumeros {
         var valorConvert = nf.format(valor);
         var taxaConvert = new DecimalFormat("#,##0.00").format(taxa);
 
-        System.out.println("Valor: " + valorConvert + "\n" + "Taxa: " + taxaConvert + "%");
+        System.out.printf("Valor: " + valorConvert + "\n" + "Taxa: " + taxaConvert + "%");
     }
 }
