@@ -8,9 +8,8 @@ public class PrintFormatacaoNumeros {
         float taxa = 0.2456f;
         float valor = 7654.321f;
 
-        System.out.printf("Valor: " + NumberFormat.getCurrencyInstance(new Locale("pt","BR"))
-                .format(valor) + "\n" + "Taxa: %.2f%%\n", taxa);
+        System.out.printf("Valor: R$ " + String.format("%.8s",NumberFormat.getInstance(Locale.US)
+                .format(valor)) + "\n" + "Taxa: %.2f%%\n", taxa);
 
-	System.err.println("");
     }
 }
