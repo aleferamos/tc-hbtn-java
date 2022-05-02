@@ -12,24 +12,31 @@ public class Program {
         Gerente gerenteDocumentacao = new Gerente(4980);
 
 
-        returnCalc(empregadoEngenharia1, departamentoEngenharia);
+        returnEmpregado(empregadoEngenharia1, departamentoEngenharia);
 
-        returnCalc(empregadoEngenharia2, departamentoEngenharia);
+        returnEmpregado(empregadoEngenharia2, departamentoEngenharia);
 
-        returnCalc(gerenteEngenharia, departamentoEngenharia);
+        returnGerente(gerenteEngenharia, departamentoEngenharia);
 
-        returnCalc(empregadoDocumentacao1, departamentoDocumentacao);
+        returnEmpregado(empregadoDocumentacao1, departamentoDocumentacao);
 
-        returnCalc(empregadoDocumentacao2, departamentoDocumentacao);
+        returnEmpregado(empregadoDocumentacao2, departamentoDocumentacao);
 
-        returnCalc(gerenteDocumentacao, departamentoDocumentacao);
+        returnGerente(gerenteDocumentacao, departamentoDocumentacao);
 
     }
 
-    private static void returnCalc(Empregado<Gerente> empregado, Departamento departamento){
+    private static void returnEmpregado(Empregado empregado, Departamento departamento){
         System.out.printf("Salario Fixo: %.9s0 - Salario Total: %.9s0 - Valor Bonus: %.9s0\n",
                 String.valueOf(empregado.getSalarioFixo()).replace(".",","),
                 String.valueOf(empregado.calcularSalarioTotal(departamento)).replace(".",","),
                 String.valueOf(empregado.calcularBonus(departamento)).replace(".",","));
+    }
+
+    private static void returnGerente(Gerente gerente, Departamento departamento){
+        System.out.printf("Salario Fixo: %.9s0 - Salario Total: %.9s0 - Valor Bonus: %.9s0\n",
+                String.valueOf(gerente.getSalarioFixo()).replace(".",","),
+                String.valueOf(gerente.calcularSalarioTotal(departamento)).replace(".",","),
+                String.valueOf(gerente.calcularBonus(departamento)).replace(".",","));
     }
 }
