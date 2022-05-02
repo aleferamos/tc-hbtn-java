@@ -1,7 +1,3 @@
-import java.text.NumberFormat;
-import java.util.Locale;
-import java.util.StringTokenizer;
-
 public class Program {
     public static void main(String[] args) {
         try {
@@ -67,17 +63,17 @@ public class Program {
     }
 
     private static void returnLivro(Livro livro){
-
-        System.out.printf("Titulo: %s - Autor: %s - Preco: %.5s,00\n",
+        System.out.println();
+        System.out.printf("Titulo: %s - Autor: %s - Preco: %.9s\n",
                 livro.getTitulo(),
                 livro.getAutor(),
-                NumberFormat.getInstance(Locale.US).format(livro.getPreco()).replace(".",","));
+                new DecimalFormat("#,###.00").format(livro.getPreco()));
     }
 
     private static void returnLivro(LivroEdicaoOuro livro){
         System.out.printf("Titulo: %s - Autor: %s - Preco: %.5s\n",
                 livro.getTitulo(),
                 livro.getAutor(),
-                NumberFormat.getInstance(Locale.US).format(livro.getPreco()).replace(".",","));
+                new DecimalFormat("#,###.00").format(livro.getPreco()));
     }
 }
