@@ -72,11 +72,4 @@ public class Program {
             System.out.println(ex.getMessage() + "\n");
         }
     }
-
-    private static void returnLivro(Livro livro){
-        System.out.printf("Titulo: %s - Autor: %s - Preco: %.2s\n",
-                livro.getTitulo(),
-                livro.getAutor(),
-               String.valueOf(livro.getPreco()).replace(".",","));
-    }
 }
