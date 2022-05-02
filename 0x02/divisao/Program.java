@@ -5,12 +5,6 @@ public static void main(String[] args) {
         a = 4;
         b = 3;
 
-        try {
-
-        } catch (ArithmeticException e){
-            System.out.println("Não é possivel calcular divisão por 0");
-        } finally {
-            Numero.dividir(a, b);
-        }
+        Numero.dividir(a,b);
     }
 }
