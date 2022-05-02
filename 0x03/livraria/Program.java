@@ -6,10 +6,8 @@ public class Program {
             livro1.setAutor("Lilia Moritz Schwarcz");
             livro1.setPreco(56);
 
-            System.out.printf("Titulo: %s - Autor: %s - Preco: %.2f\n",
-                    livro1.getTitulo(),
-                    livro1.getAutor(),
-                    livro1.getPreco());
+            returnLivro(livro1);
+
         } catch (Exception ex) {
             System.out.println(ex.getMessage() + "\n");
         }
@@ -21,10 +19,7 @@ public class Program {
             livroEdicaoOuro1.setAutor("Fernando Morais");
             livroEdicaoOuro1.setPreco(38.30);
 
-            System.out.printf("Titulo: %s - Autor: %s - Preco: %.2f\n",
-                    livroEdicaoOuro1.getTitulo(),
-                    livroEdicaoOuro1.getAutor(),
-                    livroEdicaoOuro1.getPreco());
+            returnLivro(livroEdicaoOuro1);
 
         } catch (Exception ex) {
             System.out.println(ex.getMessage() + "\n");
@@ -36,10 +31,8 @@ public class Program {
             livroEdicaoOuro2.setAutor("Rick");
             livroEdicaoOuro2.setPreco(21.88);
 
-            System.out.printf("Titulo: %s - Autor: %s - Preco: %.2f\n",
-                    livroEdicaoOuro2.getTitulo(),
-                    livroEdicaoOuro2.getAutor(),
-                    livroEdicaoOuro2.getPreco());
+            returnLivro(livroEdicaoOuro2);
+
         } catch (Exception ex) {
             System.out.println(ex.getMessage() + "\n");
         }
@@ -50,10 +43,8 @@ public class Program {
             livro2.setAutor("Jane Doe");
             livro2.setPreco(15.99);
 
-            System.out.printf("Titulo: %s - Autor: %s - Preco: %.2f\n",
-                    livro2.getTitulo(),
-                    livro2.getAutor(),
-                    livro2.getPreco());
+            returnLivro(livro2);
+
         } catch (Exception ex) {
             System.out.println(ex.getMessage() + "\n");
         }
@@ -64,12 +55,24 @@ public class Program {
             livro3.setAutor("J.K. Rowling");
             livro3.setPreco(0);
 
-            System.out.printf("Titulo: %s - Autor: %s - Preco: %.2f\n",
-                    livro3.getTitulo(),
-                    livro3.getAutor(),
-                    livro3.getPreco());
+            returnLivro(livro3);
+
         } catch (Exception ex) {
             System.out.println(ex.getMessage() + "\n");
         }
+    }
+
+    private static void returnLivro(Livro livro){
+        System.out.printf("Titulo: %s - Autor: %s - Preco: %.4s0\n",
+                livro.getTitulo(),
+                livro.getAutor(),
+                String.valueOf(livro.getPreco()).replace(".",","));
+    }
+
+    private static void returnLivro(LivroEdicaoOuro livro){
+        System.out.printf("Titulo: %s - Autor: %s - Preco: %.4s0\n",
+                livro.getTitulo(),
+                livro.getAutor(),
+                String.valueOf(livro.getPreco()).replace(".",","));
     }
 }
