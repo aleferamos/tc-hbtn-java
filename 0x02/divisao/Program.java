@@ -1,10 +1,8 @@
 public class Program {
 public static void main(String[] args) {
-        int a, b;
+        Numero.dividir(4,3);
+        System.out.printf("\n");
+        Numero.dividir(9,0);
 
-        a = 4;
-        b = 3;
-
-        Numero.dividir(a,b);
     }
 }
