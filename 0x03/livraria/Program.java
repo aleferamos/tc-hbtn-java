@@ -69,13 +69,13 @@ public class Program {
         System.out.printf("Titulo: %s - Autor: %s - Preco: %.9s\n",
                 livro.getTitulo(),
                 livro.getAutor(),
-                new DecimalFormat("#,###.00").format(livro.getPreco()));
+                new DecimalFormat("#,###.00").format(livro.getPreco()).replace(".",","));
     }
 
     private static void returnLivro(LivroEdicaoOuro livro){
         System.out.printf("Titulo: %s - Autor: %s - Preco: %.5s\n",
                 livro.getTitulo(),
                 livro.getAutor(),
-                new DecimalFormat("#,###.00").format(livro.getPreco()));
+                new DecimalFormat("#,###.00").format(livro.getPreco()).replace(".",","));
     }
 }
