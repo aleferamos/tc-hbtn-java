@@ -1,13 +1,12 @@
 public class Quadrado {
     public static double area(double lado){
         try {
-            if(lado < 0){
-                throw new IllegalArgumentException("Lado deve possuir valor positivo");
+            if (lado < 0){
+                throw new IllegalArgumentException();
             }
-            return Math.pow(lado, 2);
-        } catch (Exception e){
-            System.out.println(e);
+        } catch (IllegalArgumentException e){
+            System.out.println("Lado deve possuir valor positivo");
         }
-        return 0;
+        return Double.parseDouble(String.valueOf(lado).substring(1));
     }
 }
