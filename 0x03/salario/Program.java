@@ -3,42 +3,34 @@ public class Program {
         Departamento departamentoEngenharia = new Departamento(1000, 1100);
         Departamento departamentoDocumentacao = new Departamento(1000, 800);
 
-        Empregado empregadoEngenharia1 = new Empregado(2300);
-        Empregado empregadoEngenharia2 = new Empregado(3650);
+        Empregado<Gerente> empregadoEngenharia1 = new Empregado<Gerente>(2300);
+        Empregado<Gerente> empregadoEngenharia2 = new Empregado<>(3650);
         Gerente gerenteEngenharia = new Gerente(5800);
 
-        Empregado empregadoDocumentacao1 = new Empregado(2500);
-        Empregado empregadoDocumentacao2 = new Empregado(3000);
+        Empregado<Gerente> empregadoDocumentacao1 = new Empregado<>(2500);
+        Empregado<Gerente> empregadoDocumentacao2 = new Empregado<>(3000);
         Gerente gerenteDocumentacao = new Gerente(4980);
 
-        System.out.printf("Salario Fixo: %.9s0 - Salario Total: %.9s0 - Valor Bonus: %.9s0\n",
-                String.valueOf(empregadoEngenharia1.getSalarioFixo()).replace(".",","),
-                String.valueOf(empregadoEngenharia1.calcularSalarioTotal(departamentoEngenharia)).replace(".",","),
-                String.valueOf(empregadoEngenharia1.calcularBonus(departamentoEngenharia)).replace(".",","));
 
-        System.out.printf("Salario Fixo: %.9s0 - Salario Total: %.9s0 - Valor Bonus: %.9s0\n",
-                String.valueOf(empregadoEngenharia2.getSalarioFixo()).replace(".",","),
-                String.valueOf(empregadoEngenharia2.calcularSalarioTotal(departamentoEngenharia)).replace(".",","),
-                String.valueOf(empregadoEngenharia2.calcularBonus(departamentoEngenharia)).replace(".",","));
+        returnCalc(empregadoEngenharia1, departamentoEngenharia);
 
-        System.out.printf("Salario Fixo: %.9s0 - Salario Total: %.9s0 - Valor Bonus: %.9s0\n",
-                String.valueOf(gerenteEngenharia.getSalarioFixo()).replace(".",","),
-                String.valueOf(gerenteEngenharia.calcularSalarioTotal(departamentoEngenharia)).replace(".",","),
-                String.valueOf(gerenteEngenharia.calcularBonus(departamentoEngenharia)).replace(".",","));
+        returnCalc(empregadoEngenharia2, departamentoEngenharia);
 
-        System.out.printf("Salario Fixo: %.9s0 - Salario Total: %.9s0 - Valor Bonus: %.9s0\n",
-                String.valueOf(empregadoDocumentacao1.getSalarioFixo()).replace(".",","),
-                String.valueOf(empregadoDocumentacao1.calcularSalarioTotal(departamentoDocumentacao)).replace(".",","),
-                String.valueOf(empregadoDocumentacao1.calcularBonus(departamentoDocumentacao)).replace(".",","));
+        returnCalc(gerenteEngenharia, departamentoEngenharia);
 
-        System.out.printf("Salario Fixo: %.9s0 - Salario Total: %.9s0 - Valor Bonus: %.9s0\n",
-                String.valueOf(empregadoDocumentacao2.getSalarioFixo()).replace(".",","),
-                String.valueOf(empregadoDocumentacao2.calcularSalarioTotal(departamentoDocumentacao)).replace(".",","),
-                String.valueOf(empregadoDocumentacao2.calcularBonus(departamentoDocumentacao)).replace(".",","));
+        returnCalc(empregadoDocumentacao1, departamentoDocumentacao);
 
-        System.out.printf("Salario Fixo: %.9s0 - Salario Total: %.9s0 - Valor Bonus: %.9s0\n",
-                String.valueOf(gerenteDocumentacao.getSalarioFixo()).replace(".",","),
-                String.valueOf(gerenteDocumentacao.calcularSalarioTotal(departamentoDocumentacao)).replace(".",","),
-                String.valueOf(gerenteDocumentacao.calcularBonus(departamentoDocumentacao)).replace(".",","));
+        returnCalc(empregadoDocumentacao2, departamentoDocumentacao);
+
+        returnCalc(gerenteDocumentacao, departamentoDocumentacao);
+
     }
+
+    private static void returnCalc(Empregado<Gerente> empregado, Departamento departamento){
+        System.out.printf("Salario Fixo: %.9s0 - Salario Total: %.9s0 - Valor Bonus: %.9s0\n",
+                String.valueOf(empregado.getSalarioFixo()).replace(".",","),
+                String.valueOf(empregado.calcularSalarioTotal(departamento)).replace(".",","),
+                String.valueOf(empregado.calcularBonus(departamento)).replace(".",","));
+    }
+    
 }
