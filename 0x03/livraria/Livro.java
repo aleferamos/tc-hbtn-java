@@ -9,10 +9,14 @@ public class Livro {
     private String autor;
     private double preco;
 
-    public Livro(String titulo, String autor, double preco) {
-        this.titulo = titulo;
-        this.autor = autor;
-        this.preco = preco;
+    public Livro(String titulo, String autor, double preco) throws LivroInvalidoException, AutorInvalidoException {
+        Livro livro = new Livro();
+        livro.setTitulo(titulo);
+        livro.setAutor(autor);
+        livro.setPreco(preco);
+        this.titulo = livro.getTitulo();
+        this.autor = livro.getAutor();
+        this.preco = livro.getPreco();
     }
 
     public Livro() {

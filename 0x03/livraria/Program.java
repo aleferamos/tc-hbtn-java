@@ -1,10 +1,11 @@
 public class Program {
     public static void main(String[] args) {
+
         try {
-            Livro livro1 = new Livro();
-            livro1.setTitulo("As barbas do imperador: D. Pedro II");
-            livro1.setAutor("Lilia Moritz Schwarcz");
-            livro1.setPreco(56);
+            Livro livro1 = new Livro(
+                    "As barbas do imperador: D. Pedro II",
+                    "Lilia Moritz Schwarcz",
+                    56);
 
             returnLivro(livro1);
 
@@ -13,11 +14,10 @@ public class Program {
         }
 
         try {
-            LivroEdicaoOuro livroEdicaoOuro1 = new LivroEdicaoOuro();
-
-            livroEdicaoOuro1.setTitulo("Xato");
-            livroEdicaoOuro1.setAutor("Fernando Morais");
-            livroEdicaoOuro1.setPreco(38.30);
+            LivroEdicaoOuro livroEdicaoOuro1 = new LivroEdicaoOuro(
+                    "Xato",
+                    "Fernando Morais",
+                    38.30);
 
             returnLivro(livroEdicaoOuro1);
 
@@ -26,10 +26,10 @@ public class Program {
         }
 
         try {
-            LivroEdicaoOuro livroEdicaoOuro2 = new LivroEdicaoOuro();
-            livroEdicaoOuro2.setTitulo("Ladrao de Raios");
-            livroEdicaoOuro2.setAutor("Rick");
-            livroEdicaoOuro2.setPreco(21.88);
+            LivroEdicaoOuro livroEdicaoOuro2 = new LivroEdicaoOuro(
+                    "Ladrao de Raios",
+                    "Rick",
+                    21.88);
 
             returnLivro(livroEdicaoOuro2);
 
@@ -38,10 +38,10 @@ public class Program {
         }
 
         try {
-            Livro livro2 = new Livro();
-            livro2.setTitulo("ab");
-            livro2.setAutor("Jane Doe");
-            livro2.setPreco(15.99);
+            Livro livro2 = new Livro(
+                    "ab",
+                    "Jane Doe",
+                    15.99);
 
             returnLivro(livro2);
 
@@ -50,10 +50,10 @@ public class Program {
         }
 
         try {
-            Livro livro3 = new Livro();
-            livro3.setTitulo("Harry Potter e o enigma do principe");
-            livro3.setAutor("J.K. Rowling");
-            livro3.setPreco(0);
+            Livro livro3 = new Livro(
+                    "Harry Potter e o enigma do principe",
+                    "J.K. Rowling",
+                    0);
 
             returnLivro(livro3);
 
