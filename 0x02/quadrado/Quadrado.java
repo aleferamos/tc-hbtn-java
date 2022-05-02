@@ -4,9 +4,11 @@ public class Quadrado {
             if (lado < 0){
                 throw new IllegalArgumentException();
             }
+            return lado;
         } catch (IllegalArgumentException e){
             System.out.println("Lado deve possuir valor positivo");
         }
+
         return Double.parseDouble(String.valueOf(lado).substring(1));
     }
 }
