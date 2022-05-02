@@ -3,12 +3,12 @@ public class Program {
         Departamento departamentoEngenharia = new Departamento(1000, 1100);
         Departamento departamentoDocumentacao = new Departamento(1000, 800);
 
-        Empregado<Gerente> empregadoEngenharia1 = new Empregado<Gerente>(2300);
-        Empregado<Gerente> empregadoEngenharia2 = new Empregado<>(3650);
+        Empregado empregadoEngenharia1 = new Empregado(2300);
+        Empregado empregadoEngenharia2 = new Empregado(3650);
         Gerente gerenteEngenharia = new Gerente(5800);
 
-        Empregado<Gerente> empregadoDocumentacao1 = new Empregado<>(2500);
-        Empregado<Gerente> empregadoDocumentacao2 = new Empregado<>(3000);
+        Empregado empregadoDocumentacao1 = new Empregado(2500);
+        Empregado empregadoDocumentacao2 = new Empregado(3000);
         Gerente gerenteDocumentacao = new Gerente(4980);
 
 
@@ -32,5 +32,4 @@ public class Program {
                 String.valueOf(empregado.calcularSalarioTotal(departamento)).replace(".",","),
                 String.valueOf(empregado.calcularBonus(departamento)).replace(".",","));
     }
-    
 }
