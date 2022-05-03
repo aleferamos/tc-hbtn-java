@@ -1,42 +1,47 @@
+import java.util.Locale;
+
 public class Program {
-    public static void main(String[] args) {
-        Departamento departamentoEngenharia = new Departamento(1000, 1100);
-        Departamento departamentoDocumentacao = new Departamento(1000, 800);
+        public static void main(String[] args) {
+	Locale.setDefault(new Locale("pt", "BR"));
+            Departamento departamentoEngenharia = new Departamento(1000, 1100);
+            Departamento departamentoDocumentacao = new Departamento(1000, 800);
 
-        Empregado empregadoEngenharia1 = new Empregado(2300);
-        Empregado empregadoEngenharia2 = new Empregado(3650);
-        Gerente gerenteEngenharia = new Gerente(5800);
+            Empregado empregadoEngenharia1 = new Empregado(2300);
+            Empregado empregadoEngenharia2 = new Empregado(3650);
+            Gerente gerenteEngenharia = new Gerente(5800);
 
-        Empregado empregadoDocumentacao1 = new Empregado(2500);
-        Empregado empregadoDocumentacao2 = new Empregado(3000);
-        Gerente gerenteDocumentacao = new Gerente(4980);
+            Empregado empregadoDocumentacao1 = new Empregado(2500);
+            Empregado empregadoDocumentacao2 = new Empregado(3000);
+            Gerente gerenteDocumentacao = new Gerente(4980);
 
+            System.out.printf("Salario Fixo: %.2f - Salario Total: %.2f - Valor Bonus: %.2f\n",
+                    empregadoEngenharia1.getSalarioFixo(),
+                    empregadoEngenharia1.calcularSalarioTotal(departamentoEngenharia),
+                    empregadoEngenharia1.calcularBonus(departamentoEngenharia));
 
-        returnEmpregado(empregadoEngenharia1, departamentoEngenharia);
+            System.out.printf("Salario Fixo: %.2f - Salario Total: %.2f - Valor Bonus: %.2f\n",
+                    empregadoEngenharia2.getSalarioFixo(),
+                    empregadoEngenharia2.calcularSalarioTotal(departamentoEngenharia),
+                    empregadoEngenharia2.calcularBonus(departamentoEngenharia));
 
-        returnEmpregado(empregadoEngenharia2, departamentoEngenharia);
+            System.out.printf("Salario Fixo: %.2f - Salario Total: %.2f - Valor Bonus: %.2f\n",
+                    gerenteEngenharia.getSalarioFixo(),
+                    gerenteEngenharia.calcularSalarioTotal(departamentoEngenharia),
+                    gerenteEngenharia.calcularBonus(departamentoEngenharia));
 
-        returnGerente(gerenteEngenharia, departamentoEngenharia);
+            System.out.printf("Salario Fixo: %.2f - Salario Total: %.2f - Valor Bonus: %.2f\n",
+                    empregadoDocumentacao1.getSalarioFixo(),
+                    empregadoDocumentacao1.calcularSalarioTotal(departamentoDocumentacao),
+                    empregadoDocumentacao1.calcularBonus(departamentoDocumentacao));
 
-        returnEmpregado(empregadoDocumentacao1, departamentoDocumentacao);
+            System.out.printf("Salario Fixo: %.2f - Salario Total: %.2f - Valor Bonus: %.2f\n",
+                    empregadoDocumentacao2.getSalarioFixo(),
+                    empregadoDocumentacao2.calcularSalarioTotal(departamentoDocumentacao),
+                    empregadoDocumentacao2.calcularBonus(departamentoDocumentacao));
 
-        returnEmpregado(empregadoDocumentacao2, departamentoDocumentacao);
-
-        returnGerente(gerenteDocumentacao, departamentoDocumentacao);
-
+            System.out.printf("Salario Fixo: %.2f - Salario Total: %.2f - Valor Bonus: %.2f\n",
+                    gerenteDocumentacao.getSalarioFixo(),
+                    gerenteDocumentacao.calcularSalarioTotal(departamentoDocumentacao),
+                    gerenteDocumentacao.calcularBonus(departamentoDocumentacao));
+        }
     }
-
-    private static void returnEmpregado(Empregado empregado, Departamento departamento){
-        System.out.printf("Salario Fixo: %.9s0 - Salario Total: %.9s0 - Valor Bonus: %.9s0\n",
-                String.valueOf(empregado.getSalarioFixo()).replace(".",","),
-                String.valueOf(empregado.calcularSalarioTotal(departamento)).replace(".",","),
-                String.valueOf(empregado.calcularBonus(departamento)).replace(".",","));
-    }
-
-    private static void returnGerente(Gerente gerente, Departamento departamento){
-        System.out.printf("Salario Fixo: %.9s0 - Salario Total: %.9s0 - Valor Bonus: %.9s0\n",
-                String.valueOf(gerente.getSalarioFixo()).replace(".",","),
-                String.valueOf(gerente.calcularSalarioTotal(departamento)).replace(".",","),
-                String.valueOf(gerente.calcularBonus(departamento)).replace(".",","));
-    }
-}
