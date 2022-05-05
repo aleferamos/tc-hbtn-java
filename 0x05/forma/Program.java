@@ -5,7 +5,7 @@ public class Program {
         try {
             System.out.printf("Area: %d", formaGeometrica.area());
         } catch (UnsupportedOperationException e) {
-            System.out.println("Funcao area nao implementada");
+            System.out.println(e+ "Funcao area nao implementada");
         }
     }
 }
