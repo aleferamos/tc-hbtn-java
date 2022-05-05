@@ -1,5 +1,11 @@
-public class FormaGeometrica {
-    public double area(){
-        throw new UnsupportedOperationException("Funcao area nao implementada");
+public class Program {
+    public static void main(String[] args) {
+        FormaGeometrica formaGeometrica = new FormaGeometrica();
+
+        try {
+            System.out.printf("Area: %d", formaGeometrica.area());
+        } catch (UnsupportedOperationException e) {
+            System.out.println("Funcao area nao implementada");
+        }
     }
 }
