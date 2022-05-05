@@ -58,7 +58,7 @@ public class Pedido {
                             .obterPrecoLiquido() * item.getQuantidade());
         }
         System.out.printf("----------------------------%nDESCONTO: %.2f%nTOTAL " +
-                "PRODUTOS: %.2f%n----------------------------%nTOTAL PEDIDO: %.2f%n", totalDesconto(),
+                "PRODUTOS: %.2f%n----------------------------%nTOTAL PEDIDO: %.2f%n----------------------------%n", totalDesconto(),
                 (calcularTotal() + totalDesconto()), calcularTotal());
     }
 }
