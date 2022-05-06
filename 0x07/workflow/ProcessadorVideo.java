@@ -7,7 +7,7 @@ public class ProcessadorVideo {
     List<CanalNotificacao> canais;
 
     public ProcessadorVideo() {
-        this.canais = new ArrayList<>();
+        this.canais = new ArrayList<CanalNotificacao>();
     }
 
     public void registrarCanal(CanalNotificacao canal){
