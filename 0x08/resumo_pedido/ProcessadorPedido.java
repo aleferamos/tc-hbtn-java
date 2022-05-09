@@ -1,4 +1,3 @@
-import provedores.Frete;
 import provedores.ProvedorFrete;
 
 public class ProcessadorPedido {
@@ -11,5 +10,6 @@ public class ProcessadorPedido {
 
     void processar(Pedido pedido){
         pedido.setFrete(provedorFrete.calcularFrete(pedido.getPeso(), pedido.getTotal()));
+        pedido.getFrete().setTipoProvedorFrete(provedorFrete.obterTipoProvedorFrete());
     }
 }
