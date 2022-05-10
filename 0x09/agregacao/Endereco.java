@@ -4,6 +4,8 @@ public class Endereco {
 
     private String numero;
 
+    private String complemento;
+
     private String bairro;
 
     private String cidade;
@@ -12,9 +14,10 @@ public class Endereco {
 
     private String pais;
 
-    public Endereco(String logradouro, String numero, String bairro, String cidade, String estado, String pais) {
+    public Endereco(String logradouro, String numero, String complemento, String bairro, String cidade, String estado, String pais) {
         this.logradouro = logradouro;
         this.numero = numero;
+        this.complemento = complemento;
         this.bairro = bairro;
         this.cidade = cidade;
         this.estado = estado;
@@ -35,6 +38,14 @@ public class Endereco {
 
     public void setNumero(String numero) {
         this.numero = numero;
+    }
+
+    public String getComplemento() {
+        return complemento;
+    }
+
+    public void setComplemento(String complemento) {
+        this.complemento = complemento;
     }
 
     public String getBairro() {
