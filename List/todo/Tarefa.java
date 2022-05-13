@@ -6,7 +6,7 @@ public class Tarefa {
 
     public Tarefa(String descricao, int identificador) {
 
-        if(descricao.isEmpty() || descricao == null){
+        if(descricao.isEmpty()){
             throw new IllegalArgumentException("Descricao de tarefa invalida");
         }
 
