@@ -1,12 +1,12 @@
 public class Tarefa {
-    private String descricao;
-    private boolean estahFeita;
-    private int identificador;
+    String descricao;
+    boolean estahFeita;
+    int identificador;
 
 
     public Tarefa(String descricao, int identificador) {
 
-        if(descricao.isEmpty()){
+        if(descricao.isEmpty() || descricao == null){
             throw new IllegalArgumentException("Descricao de tarefa invalida");
         }
 
@@ -15,7 +15,9 @@ public class Tarefa {
         this.identificador = identificador;
     }
 
-    public void modificarDescricao(String descricao){}
+    public void modificarDescricao(){
+
+    }
 
 
     public String getDescricao() {

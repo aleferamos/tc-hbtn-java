@@ -1,5 +1,4 @@
 import java.util.ArrayList;
-import java.util.List;
 
 public class ListaTodo {
     ArrayList <Tarefa> tarefas;
@@ -10,9 +9,9 @@ public class ListaTodo {
     }
 
     public void adicionarTarefa(Tarefa tarefa){
-        for (var t : tarefas){
-            if(t.getIdentificador() == tarefa.getIdentificador()){
-                throw new IllegalArgumentException("Tarefa com identificador " +tarefa.getIdentificador()+ " ja existente na lista" );
+        for (Tarefa contagem : tarefas){
+            if(contagem.getIdentificador() == tarefa.identificador){
+                throw new IllegalArgumentException("Tarefa com identificador " +tarefa.identificador+ " ja existente na lista" );
             }
         }
         tarefas.add(tarefa);
@@ -20,9 +19,9 @@ public class ListaTodo {
     }
 
     boolean marcarTarefaFeita(int identificador){
-        for(var t : tarefas){
-            if(t.getIdentificador() == identificador){
-                t.setEstahFeita(true);
+        for(Tarefa contagem : tarefas){
+            if(contagem.getIdentificador() == identificador){
+                contagem.setEstahFeita(true);
                 return true;
             }
         }
@@ -30,9 +29,9 @@ public class ListaTodo {
     }
 
     boolean desfazerTarefa(int identificador){
-        for(var t: tarefas){
-            if(t.getIdentificador() == identificador){
-                t.setEstahFeita(false);
+        for(Tarefa contagem: tarefas){
+            if(contagem.getIdentificador() == identificador){
+                contagem.setEstahFeita(false);
                 return true;
             }
         }
@@ -40,28 +39,26 @@ public class ListaTodo {
     }
 
     public void desfazerTodas(){
-        for(var t : tarefas){
-            t.setEstahFeita(false);
+        for(Tarefa contagem : tarefas){
+            contagem.setEstahFeita(false);
         }
 
 
     }
 
     public void fazerTodas(){
-        for(var t: tarefas){
-            t.setEstahFeita(true);
+        for(Tarefa contagem: tarefas){
+            contagem.setEstahFeita(true);
         }
 
     }
 
-
-
     public void listarTarefas(){
-        for(var t: tarefas){
-            if(t.isEstahFeita() == true)
-                System.out.println("[X]  Id: "+t.getIdentificador()+ " - Descricao: "+t.getDescricao());
+        for(Tarefa contagem: tarefas){
+            if(contagem.isEstahFeita() == true)
+                System.out.println("[X]  Id: "+contagem.getIdentificador()+ " - Descricao: "+contagem.getDescricao());
             else{
-                System.out.println("[ ]  Id: "+t.getIdentificador()+ " - Descricao: "+t.getDescricao());
+                System.out.println("[ ]  Id: "+contagem.getIdentificador()+ " - Descricao: "+contagem.getDescricao());
             }
         }
 

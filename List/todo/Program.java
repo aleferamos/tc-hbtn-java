@@ -32,7 +32,7 @@ public class Program {
         System.out.println("----");
 
         todo.desfazerTodas();
-//        todo.listarTarefas();
+        todo.listarTarefas();
         System.out.println("----");
 
         boolean resultado = todo.marcarTarefaFeita(4);
