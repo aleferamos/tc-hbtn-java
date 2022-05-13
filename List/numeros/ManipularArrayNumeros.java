@@ -25,7 +25,7 @@ public class ManipularArrayNumeros {
     static void removerNumero(List<Integer> numeros, int removeNumero){
 
         if(!numeros.contains(removeNumero)){
-            throw new IllegalArgumentException("Numero nao encontrado na lista");
+            System.out.println("Numero nao encontrado na lista");
         } else {
             numeros.remove(buscarPosicaoNumero(numeros, removeNumero));
         }
