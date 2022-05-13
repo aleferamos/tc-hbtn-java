@@ -1,7 +1,8 @@
 import java.util.ArrayList;
+import java.util.List;
 
 public class ListaTodo {
-    ArrayList <Tarefa> tarefas;
+    List<Tarefa> tarefas;
 
 
     public ListaTodo() {
@@ -9,8 +10,8 @@ public class ListaTodo {
     }
 
     public void adicionarTarefa(Tarefa tarefa){
-        for (Tarefa contagem : tarefas){
-            if(contagem.getIdentificador() == tarefa.identificador){
+        for (var t : tarefas){
+            if(t.getIdentificador() == tarefa.identificador){
                 throw new IllegalArgumentException("Tarefa com identificador " +tarefa.identificador+ " ja existente na lista" );
             }
         }
@@ -19,9 +20,9 @@ public class ListaTodo {
     }
 
     boolean marcarTarefaFeita(int identificador){
-        for(Tarefa contagem : tarefas){
-            if(contagem.getIdentificador() == identificador){
-                contagem.setEstahFeita(true);
+        for(var t : tarefas){
+            if(t.getIdentificador() == identificador){
+                t.setEstahFeita(true);
                 return true;
             }
         }
@@ -29,9 +30,9 @@ public class ListaTodo {
     }
 
     boolean desfazerTarefa(int identificador){
-        for(Tarefa contagem: tarefas){
-            if(contagem.getIdentificador() == identificador){
-                contagem.setEstahFeita(false);
+        for(var t: tarefas){
+            if(t.getIdentificador() == identificador){
+                t.setEstahFeita(false);
                 return true;
             }
         }
@@ -39,26 +40,26 @@ public class ListaTodo {
     }
 
     public void desfazerTodas(){
-        for(Tarefa contagem : tarefas){
-            contagem.setEstahFeita(false);
+        for(var t : tarefas){
+            t.setEstahFeita(false);
         }
 
 
     }
 
     public void fazerTodas(){
-        for(Tarefa contagem: tarefas){
-            contagem.setEstahFeita(true);
+        for(var t: tarefas){
+            t.setEstahFeita(true);
         }
 
     }
 
     public void listarTarefas(){
-        for(Tarefa contagem: tarefas){
-            if(contagem.isEstahFeita() == true)
-                System.out.println("[X]  Id: "+contagem.getIdentificador()+ " - Descricao: "+contagem.getDescricao());
+        for(var t: tarefas){
+            if(t.isEstahFeita() == true)
+                System.out.println("[X]  Id: "+t.getIdentificador()+ " - Descricao: "+t.getDescricao());
             else{
-                System.out.println("[ ]  Id: "+contagem.getIdentificador()+ " - Descricao: "+contagem.getDescricao());
+                System.out.println("[ ]  Id: "+t.getIdentificador()+ " - Descricao: "+t.getDescricao());
             }
         }
 
