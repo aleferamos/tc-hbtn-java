@@ -1,7 +1,7 @@
 public class Tarefa {
-    String descricao;
-    boolean estahFeita;
-    int identificador;
+    private String descricao;
+    private boolean estahFeita;
+    private int identificador;
 
 
     public Tarefa(String descricao, int identificador) {

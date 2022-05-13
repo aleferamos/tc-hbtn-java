@@ -11,8 +11,8 @@ public class ListaTodo {
 
     public void adicionarTarefa(Tarefa tarefa){
         for (var t : tarefas){
-            if(t.getIdentificador() == tarefa.identificador){
-                throw new IllegalArgumentException("Tarefa com identificador " +tarefa.identificador+ " ja existente na lista" );
+            if(t.getIdentificador() == tarefa.getIdentificador()){
+                throw new IllegalArgumentException("Tarefa com identificador " +tarefa.getIdentificador()+ " ja existente na lista" );
             }
         }
         tarefas.add(tarefa);
