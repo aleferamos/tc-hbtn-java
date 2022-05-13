@@ -1,51 +1,43 @@
 public class InteiroPositivo {
+
     private int valor;
 
-    public InteiroPositivo(String valor) {
-        if(Integer.parseInt(valor) > 0 ){
-            setValor(Integer.parseInt(valor));
-        }else{
-            exception();
-        }
-    }
-
     public InteiroPositivo(Integer valor) {
-        if(valor > 0){
-            setValor(valor);
-        }else{
-            exception();
-        }
+        this.valor = valor;
     }
 
-    public Integer getValor() {
+    public InteiroPositivo(String valor) {
+        if(Integer.parseInt(valor) <= -1){
+            throw new IllegalArgumentException("Valor nao eh um valor inteiro positivo");
+        }
+
+        if(!valor.isEmpty()){
+            this.valor = Integer.parseInt(valor);
+        }
+    }
+    
+    boolean ehPrimo() {
+        if(valor <= 1){
+            return false;
+        }
+
+        for (int i = 2; i < valor; i++){
+            if(valor % i == 0){
+                return false;
+            }
+        }
+
+        return true;
+    }
+
+    public int getValor() {
         return valor;
     }
 
-    public void setValor(Integer valor) {
-        if(valor > 0 ){
-            this.valor = valor;
-        }else{
-            exception();
+    public void setValor(int valor) {
+        if(valor <= -1){
+            throw new IllegalArgumentException("Valor nao eh um valor inteiro positivo");
         }
-    }
-
-    public void exception(){
-        throw new IllegalArgumentException ("Valor nao eh um valor inteiro positivo");
-    }
-
-    public boolean ehPrimo(){
-        int resultado=0;
-        int i = 1;
-        while (i <=getValor()){
-            if(getValor() % i == 0){
-                resultado +=1;
-            }
-            i++;
-        }
-        if(resultado == 2){
-            return true;
-        }else{
-            return false;
-        }
+        this.valor = valor;
     }
 }
