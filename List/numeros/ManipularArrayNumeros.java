@@ -3,7 +3,6 @@ import java.util.List;
 
 public class ManipularArrayNumeros {
 
-    static List<Integer> numeroslocal = new ArrayList<Integer>();
 
     public static int buscarPosicaoNumero(List<Integer> numeros, int i){
         if(numeros.contains(i)){
@@ -19,7 +18,7 @@ public class ManipularArrayNumeros {
             numeros.add(i);
         }else{
             throw new IllegalArgumentException("Numero jah contido na lista");
-       }
+        }
     }
 
 
