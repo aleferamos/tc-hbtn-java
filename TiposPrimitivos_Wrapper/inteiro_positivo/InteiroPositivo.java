@@ -1,39 +1,51 @@
 public class InteiroPositivo {
-
     private int valor;
 
-    public InteiroPositivo(Integer valor) {
-        this.valor = valor;
-    }
-
     public InteiroPositivo(String valor) {
-        if(Integer.parseInt(valor) <= -1){
-            throw new IllegalArgumentException("Valor nao eh um valor inteiro positivo");
+        if(Integer.parseInt(valor) > 0 ){
+            setValor(Integer.parseInt(valor));
+        }else{
+            exception();
         }
     }
 
-    boolean ehPrimo() {
-        if(valor <= 1){
-            return false;
+    public InteiroPositivo(Integer valor) {
+        if(valor > 0){
+            setValor(valor);
+        }else{
+            exception();
         }
-
-        for (int i = 2; i < valor; i++){
-            if(valor % i == 0){
-                return false;
-            }
-        }
-
-        return true;
     }
 
-    public int getValor() {
+    public Integer getValor() {
         return valor;
     }
 
-    public void setValor(int valor) {
-        if(valor <= -1){
-            throw new IllegalArgumentException("Valor nao eh um valor inteiro positivo");
+    public void setValor(Integer valor) {
+        if(valor > 0 ){
+            this.valor = valor;
+        }else{
+            exception();
         }
-        this.valor = valor;
+    }
+
+    public void exception(){
+        throw new IllegalArgumentException ("Valor nao eh um valor inteiro positivo");
+    }
+
+    public boolean ehPrimo(){
+        int resultado=0;
+        int i = 1;
+        while (i <=getValor()){
+            if(getValor() % i == 0){
+                resultado +=1;
+            }
+            i++;
+        }
+        if(resultado == 2){
+            return true;
+        }else{
+            return false;
+        }
     }
 }
