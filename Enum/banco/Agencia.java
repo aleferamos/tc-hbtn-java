@@ -5,7 +5,7 @@ public class Agencia {
 
     private String nome;
 
-    private List<Cliente> clientes;
+    private ArrayList<Cliente> clientes;
 
     public Agencia(String nome) {
         this.nome = nome;
