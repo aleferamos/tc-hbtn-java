@@ -12,7 +12,7 @@ public class Blog {
         this.postagens.add(post);
     }
 
-    public Set obterTodosAutores(){
+    public Set<Object> obterTodosAutores(){
 
         var autores = new TreeSet<>();
 
@@ -23,9 +23,9 @@ public class Blog {
         return autores;
     }
 
-    public Map obterContagemPorCategoria(){
+    public Map<String, Integer> obterContagemPorCategoria(){
 
-        var categorias = new TreeMap();
+        TreeMap<String, Integer> categorias = new TreeMap<>();
         var nR = new ArrayList<>();
 
         for (var p :this.postagens) {
