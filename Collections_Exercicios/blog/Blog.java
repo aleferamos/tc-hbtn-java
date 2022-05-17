@@ -2,21 +2,21 @@ import java.util.*;
 
 public class Blog {
 
-    public List<Post> postagens;
+    public List<Post> post;
 
     public Blog() {
-        this.postagens = new ArrayList<Post>();
+        this.post = new ArrayList<Post>();
     }
 
     public void adicionarPostagem(Post post){
-        this.postagens.add(post);
+        this.post.add(post);
     }
 
     public Set<Object> obterTodosAutores(){
 
         var autores = new TreeSet<>();
 
-        for (var postagem :this.postagens) {
+        for (var postagem :this.post) {
             autores.add(postagem.autor);
         }
 
@@ -28,7 +28,7 @@ public class Blog {
         TreeMap<String, Integer> categorias = new TreeMap<>();
         var nR = new ArrayList<>();
 
-        for (var p :this.postagens) {
+        for (var p :this.post) {
             nR.add(p.categoria);
             categorias.put(p.categoria, Collections.frequency(nR, p.categoria));
         }
