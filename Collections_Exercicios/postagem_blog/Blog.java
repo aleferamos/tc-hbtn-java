@@ -16,7 +16,7 @@ public class Blog {
 
     public Set obterPostsPorAutor(Autor autor){
 
-        var posts = new HashSet<Post>();
+        var posts = new TreeSet<Post>();
 
         for (var p:this.post) {
             if(p.autor.equals(autor)){
