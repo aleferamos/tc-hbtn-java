@@ -29,7 +29,7 @@ public class Blog {
 
     public Set obterPostsPorCategoria(Categorias categorias){
 
-        var posts = new TreeSet<Post>();
+        var posts = new TreeSet<>();
 
         for (var p :this.post) {
             if(p.categoria.equals(categorias)){
