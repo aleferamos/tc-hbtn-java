@@ -22,17 +22,27 @@ public class Post implements Comparable<Post>{
     }
 
 
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
+
         Post post = (Post) o;
-        return Objects.equals(autor, post.autor) && Objects.equals(titulo, post.titulo) && Objects.equals(corpo, post.corpo) && categoria == post.categoria;
+
+        if (autor != null ? !autor.equals(post.autor) : post.autor != null) return false;
+        if (titulo != null ? !titulo.equals(post.titulo) : post.titulo != null) return false;
+        if (corpo != null ? !corpo.equals(post.corpo) : post.corpo != null) return false;
+        return categoria == post.categoria;
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(autor, titulo, corpo, categoria);
+        int result = autor != null ? autor.hashCode() : 0;
+        result = 31 * result + (titulo != null ? titulo.hashCode() : 0);
+        result = 31 * result + (corpo != null ? corpo.hashCode() : 0);
+        result = 31 * result + (categoria != null ? categoria.hashCode() : 0);
+        return result;
     }
 
     @Override
