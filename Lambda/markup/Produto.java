@@ -6,7 +6,6 @@ public class Produto {
     String nome;
     Double preco;
     Double percentualMarkUp;
-
     Supplier<Double> precoComMarkUp;
 
     Consumer<Double> atualizarMarkUp;
@@ -24,7 +23,7 @@ public class Produto {
         this.atualizarMarkUp = new Consumer<Double>() {
             @Override
             public void accept(Double valor) {
-                percentualMarkUp = ( valor / 100);
+                setPercentualMarkUp(valor / 100);
             }
         };
     }
@@ -37,4 +36,7 @@ public class Produto {
         return preco;
     }
 
+    public void setPercentualMarkUp(Double percentualMarkUp) {
+        this.percentualMarkUp = percentualMarkUp;
+    }
 }
