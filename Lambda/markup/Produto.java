@@ -7,7 +7,8 @@ public class Produto {
     Double preco;
     Double percentualMarkUp;
     Supplier<Double> precoComMarkUp;
-    Consumer<Double> atualizarMarkup;
+
+    Consumer<Double> atualizarMarkUp;
 
     public Produto(Double preco, String nome) {
         this.nome = nome;
@@ -19,7 +20,7 @@ public class Produto {
                 return (preco * percentualMarkUp) + preco;
             }
         };
-        this.atualizarMarkup = new Consumer<Double>() {
+        this.atualizarMarkUp = new Consumer<Double>() {
             @Override
             public void accept(Double aDouble) {
                 percentualMarkUp = (aDouble / 100);
@@ -31,39 +32,8 @@ public class Produto {
         return nome;
     }
 
-    public void setNome(String nome) {
-        this.nome = nome;
-    }
-
     public Double getPreco() {
         return preco;
     }
 
-    public void setPreco(Double preco) {
-        this.preco = preco;
-    }
-
-    public Double getPercentualMarkUp() {
-        return percentualMarkUp;
-    }
-
-    public void setPercentualMarkUp(Double percentualMarkUp) {
-        this.percentualMarkUp = percentualMarkUp;
-    }
-
-    public Supplier<Double> getPrecoComMarkUp() {
-        return precoComMarkUp;
-    }
-
-    public void setPrecoComMarkUp(Supplier<Double> precoComMarkUp) {
-        this.precoComMarkUp = precoComMarkUp;
-    }
-
-    public Consumer<Double> getAtualizarMarkup() {
-        return atualizarMarkup;
-    }
-
-    public void setAtualizarMarkup(Consumer<Double> atualizarMarkup) {
-        this.atualizarMarkup = atualizarMarkup;
-    }
 }
