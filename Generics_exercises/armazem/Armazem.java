@@ -1,8 +1,6 @@
 import java.util.HashMap;
 import java.util.Map;
-import java.util.TreeMap;
-
-public class Armazem<T> implements Armazenavel{
+public class Armazem<T> implements Armazenavel<T>{
 
     Map<String, T> dados;
 
@@ -12,12 +10,14 @@ public class Armazem<T> implements Armazenavel{
 
 
     @Override
-    public void adicionarAoInventario(Object nome, Object valor) {
-        dados.put((String) nome, (T) valor);
+    public void adicionarAoInventario(String nome, T valor) {
+        dados.put(nome, valor);
     }
 
     @Override
-    public T obterDoInventario(Object nome) {
-        return (T) dados.get(nome);
+    public T obterDoInventario(String nome) {
+        return dados.get(nome);
     }
+
+
 }

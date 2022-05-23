@@ -1,6 +1,6 @@
 public interface Armazenavel<T> {
 
-    void adicionarAoInventario(T nome, T valor);
+    void adicionarAoInventario(String nome, T valor);
 
-    T obterDoInventario(T nome);
+    T obterDoInventario(String nome);
 }
