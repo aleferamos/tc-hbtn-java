@@ -1,15 +1,36 @@
-public class Program {
-    public static void main(String[] args) {
-        Produto produto1 = new Produto(129.99, "Mouse Gamer");
+import java.util.function.Consumer;
+import java.util.function.Supplier;
 
-        System.out.printf("%s - %.2f - %.2f\n", produto1.getNome(),
-                produto1.getPreco(),
-                produto1.precoComMarkUp.get());
+public class Produto {
 
-        produto1.atualizarMarkUp.accept(15d);
+    String nome;
+    Double preco;
+    Double percentualMarkUp;
+    Supplier<Double> precoComMarkUp;
 
-        System.out.printf("%s - %.2f - %.2f\n", produto1.getNome(),
-                produto1.getPreco(),
-                produto1.precoComMarkUp.get());
+
+    public Produto(Double preco, String nome) {
+        this.nome = nome;
+        this.preco = preco;
+        this.percentualMarkUp = 0.10;
+        this.precoComMarkUp = new Supplier<Double>() {
+            @Override
+            public Double get() {
+                return (preco * percentualMarkUp) + preco;
+            }
+        };
+
+    }
+    Consumer<Double> atualizarMarkUp = valor ->  this.percentualMarkUp = (valor / 100);
+    public String getNome() {
+        return nome;
+    }
+
+    public Double getPreco() {
+        return preco;
+    }
+
+    public void setPercentualMarkUp(Double percentualMarkUp) {
+        this.percentualMarkUp = percentualMarkUp;
     }
 }
