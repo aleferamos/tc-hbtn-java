@@ -1,12 +1,12 @@
 public class Funcionario {
 
-    Double salario;
+    double salario;
 
-    public Funcionario(Double salario) {
+    public Funcionario(double salario) {
         this.salario = salario;
     }
 
-    public Double getSalario() {
+    public double getSalario() {
         return salario;
     }
 }
