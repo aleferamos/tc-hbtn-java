@@ -1,7 +1,5 @@
-import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
-import java.util.concurrent.atomic.AtomicReference;
 import java.util.stream.Collectors;
 
 public class Consulta {
@@ -12,7 +10,7 @@ public class Consulta {
               .filter(produto -> produto.categoria.equals(CategoriaProduto.LIVRO)).collect(Collectors.toList());
     }
 
-    static Produto obterProdutoMAiorPreco(List<Produto> produtos){
+    static Produto obterProdutoMaiorPreco(List<Produto> produtos){
         return produtos.stream().sorted(Comparator.comparingDouble(Produto::getPreco)).collect(Collectors.toList()).get(2);
     }
 }

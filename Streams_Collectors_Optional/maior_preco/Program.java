@@ -32,9 +32,9 @@ public class Program {
         Pedido pedido2 = new Pedido(2, List.of(produto1, produto6, produto2), cliente2);
         Pedido pedido3 = new Pedido(3, List.of(produto4, produto6, produto5), cliente3);
 
-        Produto produtoMaior1 = Consulta.obterProdutoMAiorPreco(pedido1.getProdutos());
-        Produto produtoMaior2 = Consulta.obterProdutoMAiorPreco(pedido2.getProdutos());
-        Produto produtoMaior3 = Consulta.obterProdutoMAiorPreco(pedido3.getProdutos());
+        Produto produtoMaior1 = Consulta.obterProdutoMaiorPreco(pedido1.getProdutos());
+        Produto produtoMaior2 = Consulta.obterProdutoMaiorPreco(pedido2.getProdutos());
+        Produto produtoMaior3 = Consulta.obterProdutoMaiorPreco(pedido3.getProdutos());
 
         System.out.println(produtoMaior1);
         System.out.println(produtoMaior2);
