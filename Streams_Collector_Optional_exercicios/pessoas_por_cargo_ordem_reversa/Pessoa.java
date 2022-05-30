@@ -1,3 +1,5 @@
+import java.text.DecimalFormat;
+
 public class Pessoa implements Comparable<Pessoa>{
 
     int codigo;
@@ -21,7 +23,7 @@ public class Pessoa implements Comparable<Pessoa>{
 
     @Override
     public String toString() {
-        return "[" + codigo + "] " +  nome + " " + cargo + " " + idade + " " + "R$ " + salario;
+        return "[" + codigo + "] " +  nome + " " + cargo + " " + idade + " " + "R$ " + new DecimalFormat("0.000000").format(salario);
     }
 
     public String getCargo() {
