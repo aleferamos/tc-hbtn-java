@@ -34,7 +34,11 @@ public class Pessoa implements Comparable<Pessoa>{
         return nome;
     }
 
-	 public int getIdade() {
+    public int getIdade() {
         return idade;
+    }
+
+    public double getSalario() {
+        return salario;
     }
 }
