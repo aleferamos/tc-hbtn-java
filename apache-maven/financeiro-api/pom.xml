@@ -7,8 +7,9 @@
     <groupId>com.techcamps.financeiro</groupId>
     <artifactId>financeiro-api</artifactId>
     <version>1.0-SNAPSHOT</version>
-	<name>Projeto Financeiro Demo</name>
-
+    <name>Projeto Financeiro Demo</name>
+    <description>Projeto Financeiro Demo usando Apache Maven Demo<description>
+	
     <properties>
         <maven.compiler.source>11</maven.compiler.source>
         <maven.compiler.target>11</maven.compiler.target>
